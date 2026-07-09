@@ -236,14 +236,14 @@ Output:
 | `rustscan -a <IP> -r 1-65535` | Scan all TCP ports |
 
 ---
-#Disclaimer
+# Disclaimer
 
 This is strictly for educational purposes. All demonstrations, commands done in my own lab environment. 
 Do not try against systems that you do not own.
 The author is not responsible for any misue or illegal Activities.
 Follow the laws and ethical Guidelines.
 
-Thankyou.
+# Thankyou.
 
 
 
