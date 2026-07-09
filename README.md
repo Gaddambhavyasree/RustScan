@@ -118,11 +118,7 @@ rustscan -a 10.0.2.15
 
 Example Output
 
-
-
-
-
-RustScan automatically launches Nmap against the discovered port.
+<img width="752" height="648" alt="Screenshot 2026-07-09 222423" src="https://github.com/user-attachments/assets/ae486249-8d8f-4141-b208-d1f2d30baf38" />
 
 ---
 
@@ -134,9 +130,9 @@ rustscan -a 10.0.2.15 -- -sV
 
 Example Result
 
-```text
-4000/tcp open http Golang net/http server
-```
+<img width="758" height="403" alt="Screenshot 2026-07-09 222649" src="https://github.com/user-attachments/assets/046fcb1c-4946-4ecf-874f-9d3a9f616973" />
+
+<img width="757" height="251" alt="Screenshot 2026-07-09 222733" src="https://github.com/user-attachments/assets/d8dbac0c-cea4-41c9-9611-3e8586d54f69" />
 
 **Purpose**
 
@@ -150,6 +146,11 @@ Example Result
 ```bash
 rustscan -a 10.0.2.15 -- -sC
 ```
+
+Example Result
+
+<img width="677" height="517" alt="Screenshot 2026-07-09 222824" src="https://github.com/user-attachments/assets/4aa8d080-990f-4eb1-b6b5-d53e2c2619c3" />
+
 
 Runs Nmap's default NSE scripts against discovered ports.
 
@@ -171,11 +172,8 @@ Performs:
 
 Example findings:
 
-- HTTP Service
-- Golang net/http server
-- Linux Kernel Fingerprint
+<img width="756" height="662" alt="Screenshot 2026-07-09 222949" src="https://github.com/user-attachments/assets/852ead08-6214-4ded-8985-8005ebbe98fe" />
 
----
 
 # Scan a Specific Port
 
@@ -207,9 +205,8 @@ rustscan -a 10.0.2.15 -r 1-4000
 
 Output:
 
-```text
-Open 4000
-```
+<img width="752" height="602" alt="Screenshot 2026-07-09 223050" src="https://github.com/user-attachments/assets/bd7caeac-d8ed-4d0f-9817-59220501e7ba" />
+
 
 ---
 
@@ -221,39 +218,8 @@ rustscan -a 10.0.2.15 -r 1-65535
 
 Output:
 
-```text
-Open 4000
-```
+<img width="752" height="658" alt="Screenshot 2026-07-09 223124" src="https://github.com/user-attachments/assets/336fc93f-0576-400f-89c6-7eec9846a0c7" />
 
----
-
-# Understanding `--`
-
-Everything after `--` is passed directly to **Nmap**.
-
-Example:
-
-```bash
-rustscan -a 10.0.2.15 -- -sV
-```
-
-Workflow:
-
-```
-RustScan
-        │
-        ▼
-Discovers Open Ports
-        │
-        ▼
-Runs Nmap
-        │
-        ▼
-Service Detection
-Version Detection
-OS Detection
-NSE Scripts
-```
 
 ---
 
@@ -269,37 +235,10 @@ NSE Scripts
 | `rustscan -a <IP> -r 1-1000` | Scan a port range |
 | `rustscan -a <IP> -r 1-65535` | Scan all TCP ports |
 
----
-
-# Notes
-
-RustScan displayed the following warning:
-
-```text
-File limit is lower than default batch size.
-```
-
-This means the operating system's file descriptor limit (`ulimit`) is lower than RustScan's default batch size.
-
-Performance can be improved by increasing the file descriptor limit:
-
-```bash
-ulimit -n 5000
-```
-
-or
-
-```bash
-rustscan --ulimit 5000 -a <target>
-```
-
----
 
 
 
-## Lab Environment
 
-- Operating System: Kali Linux
-- Shell: Zsh
-- RustScan Version: 2.4.1
-- Scanner: RustScan + Nmap
+
+
+
