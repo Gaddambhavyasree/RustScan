@@ -105,6 +105,8 @@ Output:
 
 ---
 
+<img width="516" height="289" alt="image" src="https://github.com/user-attachments/assets/ca77af68-61f1-4852-abb4-bbb3bcb364c4" />
+
 # Basic Usage
 
 ## Scan a Host
@@ -113,11 +115,12 @@ Output:
 rustscan -a 10.0.2.15
 ```
 
+
 Example Output
 
-```text
-Open 10.0.2.15:4000
-```
+
+
+
 
 RustScan automatically launches Nmap against the discovered port.
 
